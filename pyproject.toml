@@ -7,4 +7,5 @@ requires-python = ">=3.9"
 dependencies = [
     "pandas>=2.3.2",
     "streamlit>=1.49.0",
+    "urllib3<2.0",
 ]
