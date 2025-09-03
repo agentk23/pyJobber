@@ -12,10 +12,11 @@ from typing import Optional, Tuple
 # dfBjobs.to_csv('bjobs.csv', index=False)
 # returns a list of dictionaries -> each dictionary is a job
 # id, title, slug, creationDate, expirationDate, company['name'], externalUrl
-def performBjobsRequest(pageNumber=1, limit=24):
+def performBjobsRequest(pageNumber=1, limit=24, remote=False):
     print("[INFO] Starting BestJobs API request...")
     try:
-        bestjobs_url = f'https://api.bestjobs.eu/v1/jobs?offset=0&limit={limit}&remote=1'
+        bestjobs_url = f'https://api.bestjobs.eu/v1/jobs?offset=0&limit={limit}&remote={(1 if remote else 0)}'
+
         print(f"[INFO] Making initial request to: {bestjobs_url}")
         response = requests.get(bestjobs_url, timeout=30)
         response.raise_for_status()
