@@ -1,0 +1,10 @@
+.claude/
+.venv/
+.ruff_cache/
+__pycache__/
+.ipynb_checkpoints/
+*.csv
+last_run.txt
+.vscode/
+CVs/
+
