@@ -12,6 +12,7 @@ def save_jobs_to_csv(df_bjobs, df_ejobs, external_jobs=None, cache_dir="data/cac
     if external_jobs is not None:
         external_jobs.to_csv(os.path.join(cache_dir, 'externalJobs.csv'), index=False)
 
+    
 
 def load_jobs_from_csv(cache_dir="data/cache"):
     """Load job DataFrames from CSV files."""
