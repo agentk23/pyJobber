@@ -8,3 +8,15 @@ last_run.txt
 .vscode/
 CVs/
 
+# Test artifacts
+.pytest_cache/
+htmlcov/
+.coverage
+*.pyc
+*.pyo
+
+# Build artifacts
+*.egg-info/
+build/
+dist/
+
