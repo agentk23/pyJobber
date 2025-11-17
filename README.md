@@ -16,14 +16,14 @@ A modern, multi-threaded job scraping and filtering application that fetches job
 - 💾 **Intelligent caching**: Stores results locally to avoid unnecessary API calls
 - 🎨 **Enhanced UI**: Beautiful Streamlit interface with icons, metrics, and tabs
 - 🏗️ **Modular architecture**: Clean, maintainable codebase with proper separation of concerns
-- 🧪 **Comprehensive tests**: 55+ tests with 22% coverage (Phase 1 complete)
+- 🧪 **Comprehensive tests**: 55+ tests with 22% coverage
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
 - Python 3.9+
-- [uv](https://docs.astral.sh/uv/) package manager (optional)
+- [uv](https://docs.astral.sh/uv/) package manager
 
 ### Installation
 
@@ -361,9 +361,6 @@ Enable verbose logging by modifying the logging level in provider files.
 - [`tests/README.md`](tests/README.md) - Testing guide and best practices
 - [`CHANGES.md`](CHANGES.md) - Version history and changelog
 
-## License
-
-[Add your license information here]
 
 ---
 
