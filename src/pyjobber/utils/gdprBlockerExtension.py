@@ -66,7 +66,7 @@ class GDPRBlockerExtension:
                     print(f"✅ Clicked GDPR element: {selector}")
                     await page.wait_for_timeout(500)  # Wait for popup to disappear
                     return True
-            except:
+            except Exception:
                 continue
         
         return False

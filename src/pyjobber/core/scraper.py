@@ -8,7 +8,7 @@ from ..utils.rate_limiter import check_last_run, update_timestamp
 from .filters import filter_jobs_by_banned_words
 
 
-def scrape_jobs() -> Tuple[pd.DataFrame, pd.DataFrame, Optional[pd.DataFrame]]:
+def scrape_jobs() -> Tuple:
     """Main job scraping function."""
     print("[INFO] Starting job scraping process...")
     
@@ -97,7 +97,7 @@ def scrape_jobs() -> Tuple[pd.DataFrame, pd.DataFrame, Optional[pd.DataFrame]]:
         raise
 
 
-def     run_scraper_or_load_cache():
+def run_scraper_or_load_cache():
     """Main orchestration function that handles rate limiting and caching."""
     if check_last_run():
         print("24+ hours have passed. Running scraper...")
