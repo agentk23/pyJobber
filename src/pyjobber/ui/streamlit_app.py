@@ -143,9 +143,9 @@ def run_streamlit_dashboard():
                 df_bjobs['companyName'].str.contains(search_term, case=False, na=False)
             ]
             st.caption(f"Found {len(filtered_df)} matching jobs")
-            st.dataframe(filtered_df, use_container_width=True, hide_index=True)
+            st.dataframe(filtered_df, width='stretch', hide_index=True)
         else:
-            st.dataframe(df_bjobs, use_container_width=True, hide_index=True)
+            st.dataframe(df_bjobs, width='stretch', hide_index=True)
 
     with tab2:
         st.header("🟢 Provider B Listings")
@@ -158,9 +158,9 @@ def run_streamlit_dashboard():
                 df_ejobs['title'].str.contains(search_term, case=False, na=False)
             ]
             st.caption(f"Found {len(filtered_df)} matching jobs")
-            st.dataframe(filtered_df, use_container_width=True, hide_index=True)
+            st.dataframe(filtered_df, width='stretch', hide_index=True)
         else:
-            st.dataframe(df_ejobs, use_container_width=True, hide_index=True)
+            st.dataframe(df_ejobs, width='stretch', hide_index=True)
 
     with tab3:
         st.header("🔗 External Job URLs")
@@ -201,7 +201,7 @@ def run_streamlit_dashboard():
                         width="medium"
                     )
                 },
-                use_container_width=True,
+                width='stretch',
                 hide_index=True,
                 key="external_jobs_editor"
             )
@@ -226,14 +226,14 @@ def run_streamlit_dashboard():
                     "📥 Export Selected",
                     disabled=selected_count == 0,
                     type="primary",
-                    use_container_width=True
+                    width='stretch'
                 )
 
             # Show selected jobs preview if any are selected
             if selected_count > 0:
                 with st.expander("👁️ Preview Selected Jobs", expanded=False):
                     preview_df = st.session_state.selected_external_jobs.drop('selected', axis=1, errors='ignore')
-                    st.dataframe(preview_df, use_container_width=True, hide_index=True)
+                    st.dataframe(preview_df, width='stretch', hide_index=True)
 
             # Export action
             if export_button:
