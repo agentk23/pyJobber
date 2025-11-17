@@ -15,3 +15,8 @@ htmlcov/
 *.pyc
 *.pyo
 
+# Build artifacts
+*.egg-info/
+build/
+dist/
+

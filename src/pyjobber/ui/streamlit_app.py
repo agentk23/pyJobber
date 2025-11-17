@@ -119,9 +119,9 @@ def run_streamlit_dashboard():
     st.subheader("📊 Summary Statistics")
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.metric("BestJobs Listings", len(df_bjobs))
+        st.metric("Provider A Listings", len(df_bjobs))
     with col2:
-        st.metric("eJobs Listings", len(df_ejobs))
+        st.metric("Provider B Listings", len(df_ejobs))
     with col3:
         external_count = len(external_jobs) if external_jobs is not None else 0
         st.metric("External Job URLs", external_count)
@@ -129,10 +129,10 @@ def run_streamlit_dashboard():
     st.divider()
 
     # Display tabs for different data
-    tab1, tab2, tab3 = st.tabs(["🔵 BestJobs", "🟢 eJobs", "🔗 External Jobs"])
+    tab1, tab2, tab3 = st.tabs(["🔵 Provider A", "🟢 Provider B", "🔗 External Jobs"])
 
     with tab1:
-        st.header("🔵 BestJobs Listings")
+        st.header("🔵 Provider A Listings")
         st.caption(f"Total jobs: {len(df_bjobs)}")
 
         # Search filter
@@ -148,7 +148,7 @@ def run_streamlit_dashboard():
             st.dataframe(df_bjobs, use_container_width=True, hide_index=True)
 
     with tab2:
-        st.header("🟢 eJobs Listings")
+        st.header("🟢 Provider B Listings")
         st.caption(f"Total jobs: {len(df_ejobs)}")
 
         # Search filter
