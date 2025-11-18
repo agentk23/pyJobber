@@ -9,6 +9,7 @@ dependencies = [
     "googletrans>=4.0.2",
     "ollama>=0.5.4",
     "pandas>=2.3.2",
+    "pdfplumber>=0.11.0",
     "playwright>=1.55.0",
     "streamlit>=1.49.0",
     "urllib3<2.0",
