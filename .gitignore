@@ -7,6 +7,7 @@ __pycache__/
 last_run.txt
 .vscode/
 CVs/
+data/job_details/
 
 # Test artifacts
 .pytest_cache/
