@@ -18,8 +18,8 @@ def export_selected_jobs(selected_jobs_df):
         st.success(f"Exporting {len(selected_jobs_df)} selected jobs...")
         print(f"Selected jobs for export: {len(selected_jobs_df)}")
 
-        # Clean up DataFrame before export
-        export_df = selected_jobs_df.drop(columns=['selected', 'creationDate', 'expirationDate', 'companyName'], errors='ignore')
+        # Export only title and ownApplyUrl columns
+        export_df = selected_jobs_df[['title', 'ownApplyUrl']].copy()
 
         # Export to CSV
         export_path = os.path.join(selected_dir, "selected_jobs_export.csv")
@@ -268,7 +268,7 @@ def run_streamlit_dashboard():
 
                 # Display selected jobs
                 with st.expander("👁️ View Selected Jobs", expanded=True):
-                    display_df = selected_df[['id', 'title', 'ownApplyUrl']].copy()
+                    display_df = selected_df[['title', 'ownApplyUrl']].copy()
                     st.dataframe(display_df, width='stretch', hide_index=True)
 
                 st.divider()
@@ -306,8 +306,11 @@ def run_streamlit_dashboard():
                         progress_bar.progress(progress)
                         status_text.text(f"Processing job {idx + 1}/{len(selected_df)}: {row['title']}")
 
+                        # Generate job_id from index since 'id' column doesn't exist
+                        job_id = f"job_{idx}"
+
                         result = extractor.extract_job_details(
-                            job_id=str(row['id']),
+                            job_id=job_id,
                             job_title=row['title'],
                             job_url=row['ownApplyUrl']
                         )
